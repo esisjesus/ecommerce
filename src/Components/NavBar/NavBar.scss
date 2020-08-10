@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(190, 42, 42);
+    
+    div{
+        img{
+            width: 100px;
+        }
+        .nav-items{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-evenly;
+            width: 600px;
+            
+            a{
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+            }
+            
+        }
+    }
+}
