@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.scss";
-
+import CartIcon from '../CartIcon/CartIcon'
 
 function NavBar(){
     return(
@@ -12,7 +12,12 @@ function NavBar(){
                 <ul className="nav-items">
                     <li><a href="">Como Comprar</a> </li>
                     <li><a href="">Quienes Somos</a> </li>
-                    <li><a href="">Mi Carrito</a> </li>
+                    <li>
+                        <div>
+                            <CartIcon />
+                            <a href="">Mi Carrito</a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
