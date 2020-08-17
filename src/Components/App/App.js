@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.scss';
-import NavBar from "./Components/NavBar/NavBar";
-import Home from "./Containers/Home/Home";
+import NavBar from "../NavBar/NavBar";
+import Home from "../../Containers/Home/Home";
+import ItemCount from '../ItemCount/ItemCount';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
     <NavBar/>
     <Home greeting = "Bienvenido a Il Gusto!"/> 
+    <ItemCount/>
     </>
   );
 }
