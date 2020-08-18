@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './ItemCount.scss';
 
-function ItemCount(){
-    let max = 10;
-    let min = 0;
+function ItemCount(props){
+    let max = props.max || 10;
+    let min = props.min || 0;
 
-    const [isAdd, setAdd] = useState(0);
+    const [isAdd, setAdd] = useState(min);
     
     function addition(){
            setAdd(isAdd + 1) 
