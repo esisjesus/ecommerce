@@ -1,8 +1,18 @@
 .title-cont{
+    background-size: cover;
+    background-image: url(../../images/ilgusto_background.jpg);
+    height: 400px;
+    padding-top: 50px;
     .title{
-        color: rgb(190, 30, 30);
+        color: rgb(255, 255, 255);
         font-family: 'Lobster', cursive;
+        font-size: 50px;
         display: flex;
         justify-content: center;
+        align-self: center;
+        margin: 0;
+        position: relative;
+        top: 150px;
+        z-index: 1;
     }
 }

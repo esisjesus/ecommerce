@@ -13,10 +13,8 @@ function NavBar(){
                     <li><a href="">Como Comprar</a> </li>
                     <li><a href="">Quienes Somos</a> </li>
                     <li>
-                        <div>
-                            <CartIcon />
-                            <a href="">Mi Carrito</a>
-                        </div>
+                        <CartIcon />
+                        <a href="">Mi Carrito</a>
                     </li>
                 </ul>
             </div>

@@ -4,7 +4,10 @@ import './Items.scss'
 
 function Items(props){
     
+    
+    
     return(
+    
     <div className="item-card-container">
         <div className="item-card-image">
             <img src={props.items.imgSrc} alt=""/>
@@ -16,7 +19,7 @@ function Items(props){
             <span className="item-card-price">
                 {props.items.price} AR$
             </span>
-            <button className="add-to-cart">Agregar a mi carrito</button>
+            <button className="view-details"><ion-icon name="search-outline"></ion-icon>Ver producto</button>
         </div>
     </div>
     )
