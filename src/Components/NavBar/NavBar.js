@@ -1,21 +1,23 @@
 import React from "react";
 import "./NavBar.scss";
-import CartIcon from '../CartIcon/CartIcon'
+import CartIcon from '../CartIcon/CartIcon';
+import {Link} from 'react-router-dom';
 
 function NavBar(){
     return(
         <nav className="navbar">
-            <div>
-                <img src="/images/logo-ilgusto.jpeg" alt="logo de ilgusto"/>
-            </div>
+            <Link to="/">
+                <div>
+                    <img src="/images/logo-ilgusto.jpeg" alt="logo de ilgusto"/>
+                </div>
+            </Link>
             <div>
                 <ul className="nav-items">
-                    <li><a href="">Como Comprar</a> </li>
-                    <li><a href="">Quienes Somos</a> </li>
-                    <li>
-                        <CartIcon />
-                        <a href="">Mi Carrito</a>
-                    </li>
+                    <li><a>Como Comprar</a> </li>
+                    <li><a>Quienes Somos </a></li>
+                    <Link to= "/mi-carrito">
+                        <li><CartIcon />Mi Carrito</li>
+                    </Link>
                 </ul>
             </div>
         </nav>

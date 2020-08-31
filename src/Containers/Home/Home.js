@@ -1,12 +1,16 @@
 import React from 'react';
+import ItemListContainer from '../../Containers/ItemListContainer/ItemListContainer';
 import './Home.scss'
 
 function Home(props){
     return(
-    <div className ="title-cont">
-        <h1 className="title">{props.greeting}</h1>
-    </div>
-    
+    <>
+        <div className ="title-cont">
+            <h1 className="title">Bienvenido a Il Gusto!</h1>
+        </div>
+        <ItemListContainer />
+    </>    
+
     )
 }
 

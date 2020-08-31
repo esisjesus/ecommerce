@@ -1,6 +1,6 @@
 import React from 'react';
 import './Items.scss'
-
+import {Link} from 'react-router-dom';
 
 function Items(props){
     
@@ -19,7 +19,9 @@ function Items(props){
             <span className="item-card-price">
                 {props.items.price} AR$
             </span>
-            <button className="view-details"><ion-icon name="search-outline"></ion-icon>Ver producto</button>
+            <Link to ={`item-detail/${props.items.id}`}>
+                <button className="view-details"><ion-icon name="search-outline"></ion-icon>Ver producto</button>
+            </Link>
         </div>
     </div>
     )

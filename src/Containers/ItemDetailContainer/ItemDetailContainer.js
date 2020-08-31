@@ -3,16 +3,25 @@ import ItemDetail from '../../Components/ItemDetail/ItemDetail';
 
 
 
-const product =
-    {
-      imgSrc: 'https://www.hola.com/imagenes/cocina/tecnicas-de-cocina/20190613143774/como-hacer-tomates-secos-caseros/0-690-69/tomates-secos-z.jpg',
-      name: "Tomates Secos",
-      description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit ut veniam sit voluptatem reiciendis eum, nemo ipsa facilis eos! Sed enim, fuga veniam cum nam harum ipsa aspernatur libero eaque provident ipsam facere rem distinctio quidem corporis minima consequatur optio.",
-      price: 300
-    };
+const product = [
+  {
+    imgSrc: 'https://www.hola.com/imagenes/cocina/tecnicas-de-cocina/20190613143774/como-hacer-tomates-secos-caseros/0-690-69/tomates-secos-z.jpg',
+    name: "Tomates Secos",
+    description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde voluptatum natus provident, aliquam veniam consequatur porro repudiandae architecto deserunt commodi corporis maxime. Tenetur dolor deleniti, perspiciatis dolorem eum dolore magnam.",
+    price: 300,
+    id: 0
+  },
+  {
+    imgSrc: 'https://www.saboresdemihuerto.com/wp-content/uploads/2015/09/berenjenas-listas.jpg',
+    name: "Berenjenas en conserva",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt aperiam, voluptatum ducimus qui alias delectus vitae. Sapiente dolorem voluptates, harum minima unde a voluptas atque id voluptate, omnis quis doloremque?",
+    price: 200,
+    id: 1
+  } 
+] 
 
 
-function ItemDetailContainer(){
+function ItemDetailContainer(match){
         
     
 const [items, setItems] = useState([])
@@ -24,13 +33,13 @@ const [items, setItems] = useState([])
       }else{
       reject(Error('error'))
       }
-    }, 3000);
+    }, 1000);
     
   });
   
   useEffect(()=>{
     promise.then(product=>{
-    setItems(product)
+    setItems(product[match.match.params.id])
   })}, [])
   
     return(

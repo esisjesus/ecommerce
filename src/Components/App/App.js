@@ -1,22 +1,26 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './App.scss';
 import NavBar from "../NavBar/NavBar";
 import Home from "../../Containers/Home/Home";
-import ItemListContainer from '../../Containers/ItemListContainer/ItemListContainer';
+import Cart from "../Cart/Cart"
 import ItemDetailContainer  from '../../Containers/ItemDetailContainer/ItemDetailContainer'
-
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 
 function App() {
   
   return (
-    <>
-    <NavBar/>
-    <Home greeting = "Bienvenido a Il Gusto!"/> 
-    <ItemListContainer />
-    <ItemDetailContainer/>
-    </>
+    <Router>
+      <NavBar/>
+      <Switch>
+        <Route path="/" exact component= {Home}/>
+        <Route path="/item-detail/:id" component={ItemDetailContainer}/>
+        <Route path ="/mi-carrito" component ={Cart}/>
+      </Switch>
+    </Router>
+    
+    
   );
 }
 
