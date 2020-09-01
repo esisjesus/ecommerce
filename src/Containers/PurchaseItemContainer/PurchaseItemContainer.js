@@ -9,14 +9,12 @@ function PurchaseItemContainer(props){
 const max = props.max;
 const [quantity, setQuantity] = useState(1);
 
-function onChange(e){
-    setQuantity(e)
-}
+
 
 
     return(
         <>
-            <ItemCount max={max} onChange={onChange}/>
+            <ItemCount max={max} setQuantity={setQuantity}/>
             <AddToCart quantity={quantity}/>
         </>
    )

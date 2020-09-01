@@ -10,17 +10,17 @@ function ItemCount(props){
 
     
     function addition(){
-        setAdd(isAdd + 1);
-        updateQuantity(isAdd);
+        const newValue = isAdd + 1;
+        setAdd(newValue);
+        props.setQuantity(newValue);
     }
     function substraction(){
-        setAdd(isAdd - 1)
-        updateQuantity(isAdd);
+        const newValue = isAdd - 1;
+        setAdd(newValue);
+        props.setQuantity(newValue);
     }
     
-    function updateQuantity(e){
-        props.setQuantity(e)
-    }
+    
     
     
     return <>
