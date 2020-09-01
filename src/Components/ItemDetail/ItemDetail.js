@@ -1,8 +1,7 @@
 import React from 'react';
 import './ItemDetail.scss';
 import ItemCount from '../ItemCount/ItemCount';
-import CartIcon from '../CartIcon/CartIcon'
-
+import PurchaseItemContainer from '../../Containers/PurchaseItemContainer/PurchaseItemContainer'
 
 function ItemDetail(props){
     return(
@@ -18,13 +17,7 @@ function ItemDetail(props){
                     <p className='info-description'>
                         {props.item.description}
                     </p>
-                </div>
-                <div className="add-to-cart-info">
-                    <span>
-                        Cantidad:
-                    </span>
-                    <ItemCount/>
-                    <button className='add-to-cart-button'>AGREGAR A MI CARRITO<CartIcon/></button>
+                    <PurchaseItemContainer max = {props.item.stock}/>
                 </div>
             </div>
         </div>

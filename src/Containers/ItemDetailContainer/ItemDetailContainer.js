@@ -9,14 +9,16 @@ const product = [
     name: "Tomates Secos",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde voluptatum natus provident, aliquam veniam consequatur porro repudiandae architecto deserunt commodi corporis maxime. Tenetur dolor deleniti, perspiciatis dolorem eum dolore magnam.",
     price: 300,
-    id: 0
+    id: 0,
+    stock: 30
   },
   {
     imgSrc: 'https://www.saboresdemihuerto.com/wp-content/uploads/2015/09/berenjenas-listas.jpg',
     name: "Berenjenas en conserva",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt aperiam, voluptatum ducimus qui alias delectus vitae. Sapiente dolorem voluptates, harum minima unde a voluptas atque id voluptate, omnis quis doloremque?",
     price: 200,
-    id: 1
+    id: 1,
+    stock: 18
   } 
 ] 
 

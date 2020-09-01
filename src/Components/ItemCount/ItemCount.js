@@ -3,15 +3,23 @@ import './ItemCount.scss';
 
 function ItemCount(props){
     let max = props.max || 10;
-    let min = props.min || 0;
-
+    let min = props.min || 1;
+    
     const [isAdd, setAdd] = useState(min);
     
+
+    
     function addition(){
-           setAdd(isAdd + 1) 
+        setAdd(isAdd + 1);
+        updateQuantity(isAdd);
     }
     function substraction(){
-            setAdd(isAdd - 1)
+        setAdd(isAdd - 1)
+        updateQuantity(isAdd);
+    }
+    
+    function updateQuantity(e){
+        props.setQuantity(e)
     }
     
     
