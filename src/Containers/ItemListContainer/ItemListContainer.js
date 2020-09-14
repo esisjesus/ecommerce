@@ -1,49 +1,75 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ItemList from '../../Components/ItemList/ItemList'
+import QuerySelector from "../../Components/QuerySelector/QuerySelector"
+// import Loading from '../../Components/Loading/Loading'
+import {getFirestore} from '../../firebase/index'
 
 
-
-const product = [
-      {
-        imgSrc: 'https://www.hola.com/imagenes/cocina/tecnicas-de-cocina/20190613143774/como-hacer-tomates-secos-caseros/0-690-69/tomates-secos-z.jpg',
-        name: "Tomates Secos",
-        price: 300,
-        id: 0,
-        stock: 100
-      },
-      {
-        imgSrc: 'https://www.saboresdemihuerto.com/wp-content/uploads/2015/09/berenjenas-listas.jpg',
-        name: "Berenjenas en conserva",
-        price: 200,
-        id: 1,
-        stock: 56
-      } 
-]  
 
 function ItemListContainer() {
+  
+  // Esta seccion del codigo trae la informacion de los productos para luego ser mapeados y renderizados
+  
+  const [filter, setFilter] = useState(null)
+  const [loading, setLoading] = useState(false)
+    
+    useEffect(()=>{
+      const products =[]
+      const db = getFirestore()
+      const productsCollection = db.collection('products');
 
-    // Esta seccion del codigo trae la informacion de los productos para luego ser mapeados y renderizados
-  
-  
+      setLoading(true);
+      productsCollection.get().then((qs)=>{
+        qs.forEach(doc => {
+          products.push({...doc.data(), id:doc.id})
+        })
+        setItems([...products]);
+      })
+      setLoading(false)
+    }, [])
+
+
+    useEffect(()=>{
+      const products =[]
+      const db = getFirestore()
+      const productsCollection = db.collection('products');
+      const filteredCategory = productsCollection.where('category', '==', filter);
+      
+      if(filter){
+        setLoading(true)
+        filteredCategory.get().then((qs)=>{
+          qs.forEach(doc => {
+            products.push({...doc.data(), id:doc.id})
+          })
+          setItems([...products]);
+          console.log(products)
+        })
+        setLoading(false)
+      }else{
+        setLoading(true)
+        productsCollection.get().then((qs)=>{
+          qs.forEach(doc => {
+            products.push({...doc.data(), id:doc.id})
+          })
+          setItems([...products]);
+          console.log(products)
+        })
+        setLoading(false)
+      }
+    }, [filter])
+
+
   const [items, setItems] = useState([])
   
-  const promise = new Promise((resolve, reject) =>{
-    setTimeout(()=>{
-      if(product){
-      resolve(product)
-      }else{
-      reject(Error('error'))
-      }
-    }, 1000);
-    
-  });
+
   
-  promise.then(product=>{
-    setItems(product);
-  })
+  
     
   return(
-      <ItemList items = {items} />
+    <>
+    <QuerySelector setFilter={setFilter}/>
+    <ItemList items = {items} />
+    </>
   )
 }
 

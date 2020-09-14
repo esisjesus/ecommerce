@@ -1,10 +1,17 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./NavBar.scss";
 import CartIcon from '../CartIcon/CartIcon';
 import {Link} from 'react-router-dom';
+import AppContext from '../../context/appContext';
 
-function NavBar(){
+
+function NavBar(props){
+    
+    const context = useContext(AppContext);
+
+
     return(
+
         <nav className="navbar">
             <Link to="/">
                 <div>
@@ -13,11 +20,9 @@ function NavBar(){
             </Link>
             <div>
                 <ul className="nav-items">
-                    <li><a>Como Comprar</a> </li>
-                    <li><a>Quienes Somos </a></li>
-                    <Link to= "/mi-carrito">
-                        <li><CartIcon />Mi Carrito</li>
-                    </Link>
+                    <li><Link to="/">Como Comprar</Link></li>
+                    <li><Link to="/">Quienes Somos </Link></li>
+                    <li onClick={props.toggleCart}><Link><CartIcon />Mi Carrito <div><strong>{context.updated}</strong></div></Link></li>
                 </ul>
             </div>
         </nav>

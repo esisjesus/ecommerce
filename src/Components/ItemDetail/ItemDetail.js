@@ -1,6 +1,5 @@
 import React from 'react';
 import './ItemDetail.scss';
-import ItemCount from '../ItemCount/ItemCount';
 import PurchaseItemContainer from '../../Containers/PurchaseItemContainer/PurchaseItemContainer'
 
 function ItemDetail(props){
@@ -17,7 +16,7 @@ function ItemDetail(props){
                     <p className='info-description'>
                         {props.item.description}
                     </p>
-                    <PurchaseItemContainer max = {props.item.stock}/>
+                    <PurchaseItemContainer max = {props.item.stock} name={props.item.name} image={props.item.imgSrc}/>
                 </div>
             </div>
         </div>

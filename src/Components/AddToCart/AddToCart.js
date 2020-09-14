@@ -1,10 +1,11 @@
 import React from 'react';
-import CartIcon from '../CartIcon/CartIcon'
+import './AddToCart.scss'
 
 function PurchaseItem(props){
+
     return( 
-        <div className="add-to-cart-info">
-            <button className='add-to-cart-button'>AGREGAR A MI CARRITO<CartIcon/>{props.quantity}</button>
+        <div>
+            <button className='add-to-cart-button' onClick={props.addToCart}>AGREGAR {props.quantity} A MI CARRITO</button>
         </div>
     )
 }

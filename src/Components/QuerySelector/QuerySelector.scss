@@ -1,0 +1,57 @@
+.query-ctn{
+    display: flex;
+    flex-direction: column;
+    
+
+    
+    .query-selector{
+        display: flex;
+        flex-direction: row;
+        color:red;
+        list-style: none;
+        width: 400px;
+        justify-content: space-between;
+        font-size: larger;
+        margin: 1rem auto;
+        padding: 0;
+        
+        .query-selected{
+            cursor: pointer;
+        }
+    }
+    .underline{
+        height: 0;
+        width:450px;
+        margin: 1px auto;
+        border: 1px red solid;
+        transition: all .3s ease-in-out;
+        
+    }
+    .conserva{
+        height: 0;
+        width:100px;
+        margin: 1px auto;
+        position: relative;
+        left:-50px;
+        border: 1px red solid;
+        transition: all .3s ease-in-out;
+    }
+    .salsa{
+        height: 0;
+        width:100px;
+        margin: 1px auto;
+        position: relative;
+        left:83px;
+        border: 1px red solid;
+        transition: all .3s ease-in-out;
+    }
+    .dips{
+        height: 0;
+        width:100px;
+        margin: 1px auto;
+        position: relative;
+        left:180px;
+        border: 1px red solid;
+        transition: all .3s ease-in-out;
+    }
+}

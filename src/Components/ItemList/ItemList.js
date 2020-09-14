@@ -1,7 +1,6 @@
-import React,{useState} from 'react';
+import React from 'react';
 import Items from '../Items/Items';
 import './ItemList.scss';
-import {Link} from 'react-router-dom';
 
 
 function ItemList(props){

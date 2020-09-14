@@ -19,7 +19,7 @@ function Items(props){
             <span className="item-card-price">
                 {props.items.price} AR$
             </span>
-            <Link to ={`item-detail/${props.items.id}`}>
+            <Link to ={{pathname:`item-detail/${props.items.id}`, state:{item: props.items}}}>
                 <button className="view-details"><ion-icon name="search-outline"></ion-icon>Ver producto</button>
             </Link>
         </div>

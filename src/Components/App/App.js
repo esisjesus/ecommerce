@@ -1,24 +1,36 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.scss';
 import NavBar from "../NavBar/NavBar";
 import Home from "../../Containers/Home/Home";
 import Cart from "../Cart/Cart"
 import ItemDetailContainer  from '../../Containers/ItemDetailContainer/ItemDetailContainer'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-
+import {AppProvider} from '../../context/appContext'
 
 
 function App() {
+
+  const [showCart, setShowCart] = useState("hidden-cart-container");
   
+  function toggleCart(){
+    if(showCart === "hidden-cart-container"){
+      setShowCart("show-cart-container")
+    }else if(showCart==="show-cart-container"){
+      setShowCart("hidden-cart-container")
+    }
+  }
+
   return (
-    <Router>
-      <NavBar/>
-      <Switch>
-        <Route path="/" exact component= {Home}/>
-        <Route path="/item-detail/:id" component={ItemDetailContainer}/>
-        <Route path ="/mi-carrito" component ={Cart}/>
-      </Switch>
-    </Router>
+    <AppProvider>
+      <Router>
+        <NavBar toggleCart={toggleCart}/>
+        <Cart showCart={showCart}/>
+        <Switch>
+          <Route path="/" exact component= {Home}/>
+          <Route path="/item-detail/:id" component={ItemDetailContainer}/>
+        </Switch>
+      </Router>
+    </AppProvider>
     
     
   );

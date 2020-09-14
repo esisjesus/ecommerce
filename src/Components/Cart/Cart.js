@@ -1,15 +1,21 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import CartItemContainer from '../../Containers/CartItemContainer/CartItemContainer';
+import AppContext from '../../context/appContext'
 import "./Cart.scss";
 
-function Cart (){
-    return(
-        <div className="cart-container">
-            <div className="cart-content">
-                <h2>Articulos:</h2>
-                <h3>El carrito esta vacio! Añade algunos articulos</h3>
+
+function Cart (props){
+    
+    const context = useContext(AppContext);
+
+        return(
+            <div className={props.showCart}>
+                <div className={context.cart.length > 0? 'cart-content' : 'cart-empty'}>
+                    <CartItemContainer/>
+                    <h3>Aun no haz agregado nada al carrito! Por favor agrega algun articulo</h3>
+                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
 
 export default Cart;

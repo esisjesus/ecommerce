@@ -1,24 +1,66 @@
-.cart-container{
-    margin: 100px auto;
+.show-cart-container{
+    position:fixed;
+    top: 0;
+    right: 10px;
+    z-index: 1000;
+    margin: 50px auto;
     height: 500px;
     width: 300px;
     border-radius: 10px;
-    background-image: url(../../images/empty_cart.jpg);
+    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 200px;
-    border: solid .5px rgba(153, 174, 200, 0.596);
-    -webkit-box-shadow: -1px 1px 30px -13px rgba(115,115,115,1);
-    -moz-box-shadow: -1px 1px 30px -13px rgba(115,115,115,1);
-    box-shadow: -1px 1px 30px -13px rgba(115,115,115,1);
+    -webkit-box-shadow: 1px 3px 24px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 24px 3px rgba(0,0,0,0.75);
+    box-shadow: 1px 3px 24px 3px rgba(0,0,0,0.75);
     color: rgb(187, 25, 25);
-
+    transition: top 1s ease 0s;
     .cart-content{
         
-        h2{
+        h3{
+            display: none;
+        }
+
+    }
+    .cart-empty{
+        margin-top: 150px;
+        height: 150px;
+        background-image: url(../../images/empty_cart.jpg);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        h3{
+            position: relative;
+            top: 200px;
             margin: 10px;
             font-weight: lighter;
+            font-size: 18px;
+            text-align: center;
         }
+    }
+}
+
+.hidden-cart-container{
+    position:fixed;
+    top: -700px;
+    right: 10px;
+    z-index: 1000;
+    margin: 50px auto;
+    height: 500px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    -webkit-box-shadow: 1px 3px 24px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 24px 3px rgba(0,0,0,0.75);
+    box-shadow: 1px 3px 24px 3px rgba(0,0,0,0.75);
+    color: rgb(187, 25, 25);
+    transition: top .5s ease 0s;
+    .cart-content{
         
         h3{
             position: relative;
@@ -29,4 +71,22 @@
             text-align: center;
         }
     }
+    .cart-empty{
+        margin-top: 150px;
+        height: 150px;
+        background-image: url(../../images/empty_cart.jpg);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        h3{
+            position: relative;
+            top: 200px;
+            margin: 10px;
+            font-weight: lighter;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
 }
+
