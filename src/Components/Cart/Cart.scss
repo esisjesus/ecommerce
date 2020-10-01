@@ -18,10 +18,23 @@
     transition: top 1s ease 0s;
     .cart-content{
         
+
+
         h3{
             display: none;
         }
 
+        .purchase-btn{
+            color: white;
+            border: rgb(179, 39, 39) 1px solid;
+            background-color: rgb(179, 39, 39);
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+            top: 450px;
+            left: 110px;
+            cursor: pointer;
+        }
     }
     .cart-empty{
         margin-top: 150px;
@@ -38,6 +51,9 @@
             font-weight: lighter;
             font-size: 18px;
             text-align: center;
+        }
+        .purchase-btn{
+            display: none;
         }
     }
 }
@@ -63,12 +79,16 @@
     .cart-content{
         
         h3{
-            position: relative;
+            position: absolute;
             top: 300px;
             margin: 10px;
             font-weight: lighter;
             font-size: 18px;
             text-align: center;
+        }
+
+        .purchase-btn{
+            display: none;
         }
     }
     .cart-empty{
@@ -86,6 +106,9 @@
             font-weight: lighter;
             font-size: 18px;
             text-align: center;
+        }
+        .purchase-btn{
+            display: none;
         }
     }
 }

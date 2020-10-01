@@ -7,10 +7,10 @@
     width: 200px;
     padding: 20px;
     border-radius: 10px;
-    border: solid .5px rgba(153, 174, 200, 0.596);
-    -webkit-box-shadow: -1px 1px 30px -13px rgba(115,115,115,1);
--moz-box-shadow: -1px 1px 30px -13px rgba(115,115,115,1);
-box-shadow: -1px 1px 30px -13px rgba(115,115,115,1);
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 10px 10px 16px 0px rgba(168,168,168,1);
+    -moz-box-shadow: 10px 10px 16px 0px rgba(168,168,168,1);
+    box-shadow: 10px 10px 16px 0px rgba(168,168,168,1);
     .item-card-image{
         img{
             border-radius: 5px;

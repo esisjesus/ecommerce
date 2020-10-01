@@ -1,11 +1,13 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import DeleteIcon from '../DeleteIcon/DeleteIcon';
-import "./CartItem.scss";
 import AppContext from '../../context/appContext';
+import './CheckoutItem.scss'
 
-function CartItem(props){
+function CheckoutItem(props){
+    const price = props.cartItem.price * props.cartItem.quantity
+    const context = useContext(AppContext)
 
-    const context = useContext(AppContext);
+    
 
     function deleteThisItem(){
         
@@ -14,22 +16,21 @@ function CartItem(props){
     }
 
     return(
-        <div className='cart-item-ctn'>
-            <div className='cart-item-img'>
+        <div className='checkout-item-ctn'>
+            <div className='checkout-item-img'>
                 <img src={props.cartItem.image} alt={props.cartItem.name}/>
             </div>
-            <div className='cart-item-info'>
+            <div className='checkout-item-info'>
                 <span>
                     {props.cartItem.name}
                 </span>
-                <span className='quantity'>
+                <span className='checkout-quantity'>
                     x{props.cartItem.quantity}
                 </span>
+                <span>{price}AR$</span>
                 <DeleteIcon delete ={deleteThisItem} />
-                
             </div>
         </div>
     )
 }
-
-export default CartItem;
+export default CheckoutItem;

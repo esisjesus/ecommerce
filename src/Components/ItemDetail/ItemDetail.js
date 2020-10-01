@@ -16,7 +16,7 @@ function ItemDetail(props){
                     <p className='info-description'>
                         {props.item.description}
                     </p>
-                    <PurchaseItemContainer max = {props.item.stock} name={props.item.name} image={props.item.imgSrc}/>
+                    <PurchaseItemContainer max = {props.item.stock} name={props.item.name} image={props.item.imgSrc} price={props.item.price} id={props.item.id}/>
                 </div>
             </div>
         </div>

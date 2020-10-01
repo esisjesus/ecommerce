@@ -12,7 +12,7 @@ const [quantity, setQuantity] = useState(1);
 const context = useContext(AppContext);
 
 function addToCart(){
-    context.newItem({image:props.image, name:props.name, quantity})
+    context.newItem({id: props.id, image:props.image, name:props.name, price: props.price, quantity})
 }
 
 

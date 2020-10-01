@@ -7,23 +7,27 @@
     .query-selector{
         display: flex;
         flex-direction: row;
-        color:red;
+        color:rgb(206, 31, 31);
         list-style: none;
         width: 400px;
         justify-content: space-between;
         font-size: larger;
         margin: 1rem auto;
         padding: 0;
+        text-decoration: none;
         
         .query-selected{
-            cursor: pointer;
+            .link{
+                color:rgb(206, 31, 31);
+                text-decoration: none;
+            }
         }
     }
     .underline{
         height: 0;
         width:450px;
         margin: 1px auto;
-        border: 1px red solid;
+        border: 1px rgb(206, 31, 31) solid;
         transition: all .3s ease-in-out;
         
     }
@@ -33,7 +37,7 @@
         margin: 1px auto;
         position: relative;
         left:-50px;
-        border: 1px red solid;
+        border: 1px rgb(206, 31, 31) solid;
         transition: all .3s ease-in-out;
     }
     .salsa{
@@ -42,7 +46,7 @@
         margin: 1px auto;
         position: relative;
         left:83px;
-        border: 1px red solid;
+        border: 1px rgb(206, 31, 31) solid;
         transition: all .3s ease-in-out;
     }
     .dips{
@@ -51,7 +55,7 @@
         margin: 1px auto;
         position: relative;
         left:180px;
-        border: 1px red solid;
+        border: 1px rgb(206, 31, 31) solid;
         transition: all .3s ease-in-out;
     }
 }

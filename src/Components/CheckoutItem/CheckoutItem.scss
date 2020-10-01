@@ -1,0 +1,34 @@
+.container{
+    padding-top: 50px;
+    .checkout-item-ctn{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        margin: 10px auto;
+        margin-top: 20px;
+        width: 800px;
+        height: 35px;
+        border: .5px solid rgba(202, 197, 226, 0.52);
+        border-radius: 10px;
+    
+        .checkout-item-img{
+            display:flex;
+            align-items: center;
+            img{
+                width:50px;
+                max-height: 50px;
+            }
+        }
+        .checkout-item-info{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 15px;
+    
+            .checkout-quantity{
+                margin:5px
+            }
+        }
+    }
+}

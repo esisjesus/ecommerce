@@ -67,7 +67,7 @@ function ItemListContainer() {
     
   return(
     <>
-    <QuerySelector setFilter={setFilter}/>
+    <QuerySelector setFilter={setFilter} storageItem={filter}/>
     <ItemList items = {items} />
     </>
   )
