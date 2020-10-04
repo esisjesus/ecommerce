@@ -17,10 +17,9 @@
         text-decoration: none;
         
         .query-selected{
-            .link{
-                color:rgb(206, 31, 31);
-                text-decoration: none;
-            }
+            color:rgb(206, 31, 31);
+            text-decoration: none;
+            cursor: pointer;
         }
     }
     .underline{

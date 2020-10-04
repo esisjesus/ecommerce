@@ -29,7 +29,6 @@ function App() {
         <Switch>
           <Route path="/" exact component= {Home}/>
           <Route path="/item-detail/:id" component={ItemDetailContainer}/>
-          <Route path="/categories/:categoryId" component={Home}/>
           <Route path="/finalizar-compra" component={Checkout}/>
         </Switch>
       </Router>

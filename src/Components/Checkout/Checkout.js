@@ -41,23 +41,22 @@ function Checkout(){
             total: total
         }
         orders.add(newOrder).then(function(docRef){
+            succeed(docRef.id);
             console.log("Documento creado satisfactoriamente ID del documento:", docRef.id)
 
         })
         .catch(function(error){
             console.error("Error adding document: ", error);
         })
-        console.log(buyer.email)
-
     }
 
-    function succeed(){
+    function succeed(id){
         MySwal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Tu orden ha sido creada satisfactoriamente!',
+            title: `Tu orden ha sido creada satisfactoriamente! El ID de tu orden es ${id}`,
             showConfirmButton: false,
-            timer: 2000
+            timer: 5000
           })
     }
     
@@ -78,7 +77,7 @@ function Checkout(){
                 <span className="total"> <strong>Total: </strong>{total} AR$</span>
                 </div>
                 <CheckoutForm setName={setName} setPhone={setPhone} setEmail={setEmail} setEmailCheck={setEmailCheck}/>
-                <button className="create-order" onClick={createOrder, succeed} disabled={email !== emailCheck || name === null || phone===null || email===null || name.length < 1 || email.length < 1 || phone.length < 1}>Crear Orden</button>
+                <button className="create-order" onClick={createOrder} disabled={email !== emailCheck || name === null || phone===null || email===null || name.length < 1 || email.length < 1 || phone.length < 1}>Crear Orden</button>
             </div>
             :
             <div className="empty-cart-checkout">

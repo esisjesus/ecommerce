@@ -34,10 +34,10 @@ function QuerySelector(props){
     return(
         <div className='query-ctn'>
             <ul className='query-selector'>
-                <li className='query-selected' onClick={all}><Link to='/' className='link' >TODO</Link></li>
-                <li className='query-selected' onClick={conserva}><Link to='/categories/conservas' className='link'>CONSERVAS</Link></li>
-                <li className='query-selected' onClick={salsa}><Link to='/categories/salsas' className='link'>SALSAS</Link></li>
-                <li className='query-selected' onClick={dips}><Link to='/categories/dips' className='link'>DIPS</Link></li>
+                <li className='query-selected' onClick={all}>TODO</li>
+                <li className='query-selected' onClick={conserva}>CONSERVAS</li>
+                <li className='query-selected' onClick={salsa}>SALSAS</li>
+                <li className='query-selected' onClick={dips}>DIPS</li>
             </ul>
             <div className={underline}></div>
         </div>
